@@ -194,11 +194,13 @@ echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-### Step 4 — Run the setup script
+### Step 4 —  Activate the virtual environment
 
 ```bash
-chmod +x setup.sh
-./setup.sh
+cd reconai
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
 The setup script will automatically:
@@ -212,10 +214,11 @@ The setup script will automatically:
 - Download and configure SecLists wordlists
 - Create `.env` from `.env.example`
 
-### Step 5 — Activate the virtual environment
+### Step 5 — Run the setup script
 
 ```bash
-source venv/bin/activate
+chmod +x setup.sh
+./setup.sh
 ```
 
 ### Step 6 — Configure API keys
